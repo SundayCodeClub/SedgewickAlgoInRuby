@@ -1,13 +1,22 @@
 
+
+
+
+
 # solution for finding harmonics using inclusive number set starting with 1
+# updated solution to also account for negative numbers
 def harmonic(n) 
 	sum = 0.0
+
+	if (n < 0)
+		return -(harmonic(n.abs))
+	end
 
 	for i in 1..n
 		sum += 1.0 / i
 	end
 
-	print sum
+	sum
 
 end
 
@@ -67,13 +76,13 @@ end
 
 # attempt at finding the square root with recursion
 # sqrt_recursive(16, 16) =s ~ 4
-def sqrt_recursive(t,c) 
+def sqrt_recursive(c,t=c) 
 
 	error_margin = 0.00000001
 
-	if ( (t - (c/t) ).abs > error_margin * t )
+	while ( (t - (c/t) ).abs > error_margin * t )
 		
-		t = sqrt_recursive( (c/t + t) / 2.0, c) 
+		t = sqrt_recursive( c, (c/t + t) / 2.0 ) 
 	
 	end
 
