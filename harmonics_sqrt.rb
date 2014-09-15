@@ -1,5 +1,5 @@
 
-
+# solution for finding harmonics using inclusive number set starting with 1
 def harmonic(n) 
 	sum = 0.0
 
@@ -11,7 +11,7 @@ def harmonic(n)
 
 end
 
-
+# solution for finding harmonics using an exclusive number set starting with 0
 def harmonic_zero(n) 
 	sum = 0.0
 
