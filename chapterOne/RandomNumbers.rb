@@ -22,10 +22,10 @@ end
 # vs a continuous distrabution where the values can be any number between two numbers.
 # 
 # The example code uses StdRandom.random, which is depriciated in favor of StdRandom.uniform
-# yeah this doesnt work right
-# maybe the values of the array have to be between 0 and 1? not sure
+# 
 
 def discrete(float_ary)
+#sum of float_ary must = 1
   r = rand() # come up with a random number
   sum = 0.0
   float_ary.each do |num| 
@@ -37,8 +37,27 @@ def discrete(float_ary)
   -1 # not sure why we return a negative one here. I think if the array is empty, we return a -1
 end
 
+#it worrrrkkksss
+def create_float_ary(length, total)
+  arr = []
+  max = total
+  while (arr.length < length)
+    rand_num = uniform(0, max)
+    arr << rand_num
+    max = max - rand_num 
+    if (arr.length == length -1)
+      arr << max 
+    end
+  end
+  arr 
+end
+
+
+
 def shuffle(ary)
   n = ary.length
   ary.each do |num|
-
+    pos = num.index
+    r = pos + rand(n-pos)
+  end
 end
