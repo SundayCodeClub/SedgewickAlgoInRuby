@@ -25,7 +25,7 @@ end
 # 
 
 def discrete(float_ary)
-#sum of float_ary must = 1
+#sum of float_ary must = 1, put in a try block.
   r = rand() # come up with a random number
   sum = 0.0
   float_ary.each do |num| 
@@ -37,7 +37,7 @@ def discrete(float_ary)
   -1 # not sure why we return a negative one here. I think if the array is empty, we return a -1
 end
 
-#it worrrrkkksss
+#creates an array of floats of a given length and with a given sum
 def create_float_ary(length, total)
   arr = []
   max = total
@@ -45,7 +45,7 @@ def create_float_ary(length, total)
     rand_num = uniform(0, max)
     arr << rand_num
     max = max - rand_num 
-    if (arr.length == length -1)
+    if (arr.length == length -1) #at the last position, stick the remainder in
       arr << max 
     end
   end
